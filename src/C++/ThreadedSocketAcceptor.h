@@ -81,7 +81,7 @@ private:
   bool onPoll( double timeout );
   void onStop();
   void doAccept( const SessionID& sessionID, const Dictionary& settings )
-  throw ( RuntimeError );
+  EXCEPT ( RuntimeError );
 
   void addThread(socket_handle s, thread_id t );
   void removeThread(socket_handle s );

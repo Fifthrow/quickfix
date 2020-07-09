@@ -82,7 +82,7 @@ public:
   const Dictionary* const getSessionSettings( const SessionID& sessionID ) const;
 
   void createSession( const SessionID& sessionID, const Dictionary& dictionary )
-  throw ( ConfigError, RuntimeError );
+  EXCEPT ( ConfigError, RuntimeError );
 
   bool has( const SessionID& id )
   { return m_sessions.find( id ) != m_sessions.end(); }
@@ -107,7 +107,7 @@ private:
   /// Implemented to stop a running acceptor.
   virtual void onStop() = 0;
   /// Implemented to connect a session to its target.
-  virtual void doAccept( const SessionID&, const Dictionary& ) throw ( RuntimeError ) = 0;
+  virtual void doAccept( const SessionID&, const Dictionary& ) EXCEPT ( RuntimeError ) = 0;
 
   static THREAD_PROC startThread( void* p );
 

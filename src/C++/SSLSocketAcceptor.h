@@ -168,7 +168,7 @@ private:
   void onError( SocketServer& );
   void onTimeout( SocketServer& );
   void doAccept( const SessionID& sessionID, const Dictionary& settings )
-  throw ( RuntimeError );
+  EXCEPT ( RuntimeError );
 
   SocketServer* m_pServer;
   PortToSessions m_portToSessions;

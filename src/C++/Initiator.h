@@ -83,7 +83,7 @@ public:
   bool isStopped() { return m_stop; }
 
   void createSession( const SessionID& sessionID, const Dictionary& dictionary )
-  throw ( ConfigError, RuntimeError );
+  EXCEPT ( ConfigError, RuntimeError );
 
 public:
   Application& getApplication() { return m_application; }

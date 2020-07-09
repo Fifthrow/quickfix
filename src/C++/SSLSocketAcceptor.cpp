@@ -189,7 +189,7 @@ EXCEPT ( ConfigError )
 
 void SSLSocketAcceptor::doAccept
 ( const SessionID& sessionID, const Dictionary& settings )
-throw ( RuntimeError )
+EXCEPT ( RuntimeError )
 {
   short port = 0;
   try

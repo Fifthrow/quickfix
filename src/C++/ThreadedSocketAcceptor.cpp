@@ -113,7 +113,7 @@ EXCEPT ( RuntimeError )
 }
 
 void ThreadedSocketAcceptor::onInitialize( const SessionSettings& s )
-throw ( RuntimeError )
+EXCEPT ( RuntimeError )
 {
   std::set<SessionID> sessions = s.getSessions();
   std::set<SessionID>::iterator i = sessions.begin();
